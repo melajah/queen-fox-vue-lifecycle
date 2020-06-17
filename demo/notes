@@ -1,0 +1,8 @@
+ Vue juga menyediakan beberapa function yang di eksekusi step-by-step mulai dari sebelum dan sesudah observasi data, sebelum dan sesudah template di-render, juga sebelum dan sesudah instance di-mounting ke dalam DOM (Data Object Modeling).
+
+
+https://stackoverflow.com/questions/45813347/difference-between-the-created-and-mounted-events-in-vue-js
+
+created is called earlier, so it makes sense to trigger data fetching from API backend
+
+The steps in Vue lifecycle are beforCreate, created, beforeMount, mounted, beforeUpdate, updated, beforeDestroy, destroyed. If the Vue instance is created created () hook allows you to add code to be run. Let's look at the differences. Reactive data can be accessed when the processing of the options is finished and you can also change them if you want. You cannot do any DOM manipulations because DOM has not been mounted at this stage. created is called earlier in order to trigger actions like data fetching from API backend. Created will not wait for all of the async operations to complete before moving on to the next stage when making API call.

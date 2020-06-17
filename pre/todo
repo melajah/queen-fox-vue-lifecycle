@@ -1,0 +1,33 @@
+salam.
+pagi hari, hari ini. materi kita adalah lifecycle pada vue.
+jadi vue juga punya kehidupan, sama seperti sequelize contohnya beforeCreate, preUpdate, dll. 
+
+- menjelaskan diagram.
+
+- Menjelaskan apa itu lifecycle
+- menjelaskan urutan lifecycle (sampai mounted aja cukup)
+- menjelaskan kenapa fetch data baiknya di created
+- menjelaskan check token ada atau tidak di lifecycle created
+- menjelaskan computed & watch properties
+
+
+ketika Vue instance diinisiasi pertama kali menggunakan `new Vue()`, pada saat yang sama Vue juga menyediakan beberapa function yang di eksekusi step-by-step mulai dari sebelum dan sesudah observasi data, sebelum dan sesudah template di-render, juga sebelum dan sesudah instance di-mounting ke dalam DOM (Data Object Modeling).
+
+untuk step by step function yang di panggil, kita bisa menuju ke diagram.
+
+https://medium.com/badr-interactive/mengenal-lifecycle-hooks-pada-vue-js-78cd2225a69
+
+case mounted
+biasanya kalau pakai library
+misalnya datepicker
+terus untuk option date nya di mounted
+ console.log(this.$el.textContent) // I'm text inside the component.
+
+case lain biasa dipakai buat mainan canvas html.. banyak banget pakai mounted
+
+
+computed. sama seperti getter pada pada class.
+
+
+
+case in korona

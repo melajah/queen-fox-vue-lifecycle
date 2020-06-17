@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Belajar lifecyle</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container" id="app">
+      <div class="alert alert-secondary" role="alert" v-if="msgLogin">
+        {{ msgLogin }}
+      </div>
+      <div class="row mt-5">
+        <div class="col-12">
+          <button 
+            class="btn btn-md btn-danger" 
+            v-on:click="logout" 
+            v-if="isLoggedIn"
+          >
+          logout
+        </button>
+        </div>
+        <form class="col-4" @submit.prevent="login" v-if="!isLoggedIn">
+          <h2>Yuk login?</h2>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              v-model="emailLogin"
+              class="form-control"
+              id="email"
+              aria-describedby="emailHelp"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              v-model="passwordLogin"
+              class="form-control"
+              id="password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="col-12" v-else>
+          <h2>halaman dashboard</h2>
+
+          <div class="row">
+            <form class="col-4" v-on:submit.prevent="addInfected">
+              <h2>Form covid</h2>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="name" 
+                  v-model="nameInfected"
+                  autocomplete="off" 
+                />
+                {{ textMsg }}
+              </div>
+              <div class="form-group">
+                <label for="status">status</label>
+                <select class="form-control" id="status" v-model="statusInfected">
+                  <option value="sakit">sakit</option>
+                  <option value="sembuh"> sembuh</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary" v-if="statusSumbit">Submit</button>
+            </form>
+            <div class="col-4">
+              <hr />
+              <h3>List infected</h3>
+              <h4>Infected yang status sakit</h4>
+              <!-- <ul>
+                  <li v-for="person in infected">
+                    name: {{ person.name }} | 
+                    status: {{ person.status }}
+                  </li>
+                </ul> -->
+              <ul>
+                <li v-for="person in getInfectedBySakit">
+                  nama: {{ person.name }} | status: {{ person.status }}
+                </li>
+              </ul>
+              <h4>Infected yang status sembuh</h4>
+              <ul>
+                <li v-for="person in getInfectedBySembuh">
+                  nama: {{ person.name }} | status: {{ person.status }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

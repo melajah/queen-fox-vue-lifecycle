@@ -1,0 +1,49 @@
+{
+  "infected": [
+    {
+      "id": 1,
+      "name": "Koni",
+      "status": "sakit"
+    },
+    {
+      "id": 2,
+      "name": "Ciwa",
+      "status": "sembuh"
+    },
+    {
+      "name": "Joni",
+      "status": "sakit",
+      "id": 3
+    },
+    {
+      "name": "natamika",
+      "status": "sakit",
+      "id": 4
+    },
+    {
+      "name": "asa",
+      "status": "sakit",
+      "id": 5
+    },
+    {
+      "name": "asa",
+      "status": "sakit",
+      "id": 6
+    },
+    {
+      "name": "data baru",
+      "status": "sakit",
+      "id": 7
+    },
+    {
+      "name": "asaasa",
+      "status": "sembuh",
+      "id": 8
+    },
+    {
+      "name": "asaasa",
+      "status": "sembuh",
+      "id": 9
+    }
+  ]
+}
